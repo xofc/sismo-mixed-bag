@@ -9,15 +9,16 @@ it runs on a Raspberry Pi.
 usage is 
 
 $ ./log < /dev/ttyUSB0 > log.`now` &
+
 ('now' is 'date "+%g%m%d.%H%M%S"')
 
 The idea is to buffer the data coming from the serial line
 and write it in chunks.  Moreover, delta-t are printed on STDERR every 1000 sample
-to give an idea of the # of sample per seconds.
+to give an idea of the # of samples per seconds.
 
 <h1>piezo.ino</h1>
 A simple Arduino sketch which ouputs analogread(0) @ 38400 bps with a sample rate
-of about 400 sample per second.
+of about 400 samples per second.
 
 <h1>mpu6050.c</h1>
 A short program dumping accelarations coming from a MPU-6050 via I2C.
